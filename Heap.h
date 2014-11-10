@@ -43,7 +43,11 @@ private:
 	//Check the item at index, and make sure it is in the right place.
 	// If not, swap it down the "tree" of the heap until you find the right
 	// place
-	void trickleDown(unsigned long index);  
+	void trickleDown(unsigned long index);
+
+	unsigned long int left_child(unsigned long int index);
+	unsigned long int right_child(unsigned long int index);
+	unsigned long int parent(unsigned long int index);
 };
 
 #include <string>
@@ -121,3 +125,22 @@ unsigned long Heap<Pri, T>::getNumItems()
 {
 	return numItems;
 }
+
+template<class Pri, class T>
+unsigned long int Heap<Pri, T>::left_child(unsigned long int index)
+{
+	return 2 * i + 1;
+}
+
+template<class Pri, class T>
+unsigned long int Heap<Pri, T>::right_child(unsigned long int index)
+{
+	return 2 * i + 2;
+}
+
+template<class Pri, class T>
+unsigned long int Heap<Pri, T>::parent(unsigned long int index)
+{
+	return (i - 1) / 2;
+}
+
