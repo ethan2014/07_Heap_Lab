@@ -81,7 +81,19 @@ void Heap<Pri, T>::grow()
 template<class Pri, class T>
 void Heap<Pri, T>::add(std::pair<Pri, T> toAdd)
 {
-	//TODO
+	// test if we need to grow before adding a new item
+	if (numItems + 1 > backingArray.length) {
+		grow();
+	}
+
+	// new elements are always put in the left most available space first
+	// before they are bubbled up
+	backingArray[numItems] = toAdd;
+
+	// now we call bubbleUp on the node we just added
+	bubbleUp(numItems);
+
+	numItems++;
 }
 
 template<class Pri, class T>
