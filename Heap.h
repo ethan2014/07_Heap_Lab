@@ -50,12 +50,14 @@ private:
 
 template<class Pri, class T>
 Heap<Pri,T>::Heap(){
-	//TODO
+	numItems = 0;
+	arrSize = 32;
+	backingArray = new std::pair<Pri, T>[arrSize];
 }
 
 template<class Pri, class T>
 Heap<Pri,T>::~Heap(){
-	//TODO
+	delete[] backingArray;
 }
 
 template<class Pri, class T>
@@ -87,6 +89,5 @@ std::pair<Pri,T> Heap<Pri,T>::remove(){
 
 template<class Pri, class T>
 unsigned long Heap<Pri,T>::getNumItems(){
-	//TODO
-	return 0;
+	return numItems;
 }
