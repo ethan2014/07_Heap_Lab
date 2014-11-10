@@ -121,9 +121,19 @@ void Heap<Pri, T>::trickleDown(unsigned long index)
 template<class Pri, class T>
 std::pair<Pri, T> Heap<Pri, T>::remove()
 {
-	//TODO
-	std::pair<Pri, T> tmp;
-	return tmp;
+	// get the element at the top of the tree
+	std::pair<Pri, T> ret = backingArray[0];
+
+	numItems--;
+
+	// set the new root element to be the last element in the tree.  this
+	// is only temporary, this value will be moved down the tree
+	backingArray[0] = backingArray[numItems];
+
+	// move the new root node down to its rightful place
+	trickleDown(0);
+
+	return ret;
 }
 
 template<class Pri, class T>
