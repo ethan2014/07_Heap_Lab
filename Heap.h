@@ -86,7 +86,7 @@ template<class Pri, class T>
 void Heap<Pri, T>::add(std::pair<Pri, T> toAdd)
 {
 	// test if we need to grow before adding a new item
-	if (numItems + 1 > backingArray.length) {
+	if (numItems + 1 > arrSize) {
 		grow();
 	}
 
@@ -103,7 +103,13 @@ void Heap<Pri, T>::add(std::pair<Pri, T> toAdd)
 template<class Pri, class T>
 void Heap<Pri, T>::bubbleUp(unsigned long index)
 {
-	//TODO
+	unsigned long int p = parent(index);
+
+	while (index > 0 && backingArray[p] > backingArray[index]) {
+		swap(backingArray[p], backingArray[index]);
+		index = p;
+		p = parent(index);
+	}
 }
 
 template<class Pri, class T>
@@ -129,18 +135,18 @@ unsigned long Heap<Pri, T>::getNumItems()
 template<class Pri, class T>
 unsigned long int Heap<Pri, T>::left_child(unsigned long int index)
 {
-	return 2 * i + 1;
+	return 2 * index + 1;
 }
 
 template<class Pri, class T>
 unsigned long int Heap<Pri, T>::right_child(unsigned long int index)
 {
-	return 2 * i + 2;
+	return 2 * index + 2;
 }
 
 template<class Pri, class T>
 unsigned long int Heap<Pri, T>::parent(unsigned long int index)
 {
-	return (i - 1) / 2;
+	return (index - 1) / 2;
 }
 
