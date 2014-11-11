@@ -27,16 +27,16 @@ will iterate through the height of the tree.  so when add and remove call bubble
 
 add 7:
 
-  7 becomes left node of 16
-  7 and 16 swap
-  7's new parent is 6 which is < 7 so we are done
+	7 becomes left node of 16
+	7 and 16 swap
+	7's new parent is 6 which is < 7 so we are done
 
 add 3:
 
-  3 becomes right node of 7
-  3 and 7 swap, 6 is 3's new parent
-  3 and 6 swap, 4 is 3's new parent
-  3 and 4 swap, 3 is now at the root because it is the smallest in the tree
+	3 becomes right node of 7
+	3 and 7 swap, 6 is 3's new parent
+	3 and 6 swap, 4 is 3's new parent
+	3 and 4 swap, 3 is now at the root because it is the smallest in the tree
 
 10.2)
 
