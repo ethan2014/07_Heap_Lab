@@ -106,6 +106,8 @@ void Heap<Pri, T>::bubbleUp(unsigned long index)
 {
 	unsigned long int p = parent(index);
 
+	// continue to swap the node located at index with its parent while its parent is
+	// greater than the node
 	while (index > 0 && backingArray[p].first > backingArray[index].first) {
 		swap(backingArray[p], backingArray[index]);
 		index = p;

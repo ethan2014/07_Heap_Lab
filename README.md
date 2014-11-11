@@ -18,8 +18,9 @@ Questions
 
 #### 1. Which of the above requirements work, and which do not? For each requirement, write a brief response.
 
-1. TODO
-2. TODO
+1. add and remove (without calling bubbleUp and trickleDown) run in constant time.  bubbleUp and trickleDown both run in O(log n) time because in the worst case
+will iterate through the height of the tree.  so when add and remove call bubbleUp and trickleDown, their run times are O(1 + log n) which is just O(log n).
+2. the destructor and grow methods both delete the backingArray when they need to.  And no other methods need to do any memory management.
 
 #### 2. Exercises 10.1 and 10.2 from http://opendatastructures.org/ods-cpp/10_3_Discussion_Exercises.html
 TODO
