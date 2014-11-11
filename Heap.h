@@ -51,6 +51,7 @@ private:
 };
 
 #include <string>
+#include <iostream>
 
 template<class Pri, class T>
 Heap<Pri, T>::Heap()
@@ -105,7 +106,7 @@ void Heap<Pri, T>::bubbleUp(unsigned long index)
 {
 	unsigned long int p = parent(index);
 
-	while (index > 0 && backingArray[p] > backingArray[index]) {
+	while (index > 0 && backingArray[p].first > backingArray[index].first) {
 		swap(backingArray[p], backingArray[index]);
 		index = p;
 		p = parent(index);
@@ -115,7 +116,36 @@ void Heap<Pri, T>::bubbleUp(unsigned long index)
 template<class Pri, class T>
 void Heap<Pri, T>::trickleDown(unsigned long index)
 {
-	//TODO
+	bool swapped;
+	unsigned long int left;
+	unsigned long int right;
+
+	do {
+		swapped = false;
+
+		right = right_child(index);
+		left = left_child(index);
+
+		if (right < numItems && backingArray[right].first < backingArray[index].first) {
+			// right child is a possible candidate for swapping
+
+			if (backingArray[left].first < backingArray[right].first) {
+				swap(backingArray[index], backingArray[left]);
+				index = left;
+				swapped = true;
+			} else {
+				swap(backingArray[index], backingArray[right]);
+				index = right;
+				swapped = true;
+			}
+		} else {
+			if (left < numItems && backingArray[left].first < backingArray[index].first) {
+				swap(backingArray[index], backingArray[left]);
+				index = left;
+				swapped = true;
+			}
+		}
+	} while (swapped);
 }
 
 template<class Pri, class T>
