@@ -40,7 +40,24 @@ add 3:
 
 10.2)
 
+remove 6:
+
+	6 in the root gets cleared and replaced with the node at end of tree, in this case, 55
+	55, the new root, it compared with its children, 8 and 9, and is swapped with 8 because 8 < 9
+	55 is now compared to 50 and 16 and is swapped with 16
+	55 now has no more children, so we are done
+
+remove 8:
+
+	8 is removed from the root, and is replaced by 93
+	93 is replaced with its child of priority 9
+	93 is compared to 17 and 26 and is swapped with 17
+	93 is now compared to 19 and 69 and is swapped with 19
+	93 now has ho more children, so we are done
+
 #### 3. Exercise 10.4 from http://opendatastructures.org/ods-cpp/10_3_Discussion_Exercises.html
+
+
 
 #### 4. What is one question that confused you about this exercise, or one piece of advice you would share with students next semester?
 
