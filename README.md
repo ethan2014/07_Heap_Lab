@@ -57,7 +57,8 @@ remove 8:
 
 #### 3. Exercise 10.4 from http://opendatastructures.org/ods-cpp/10_3_Discussion_Exercises.html
 
-
+	for the children: `d * index + n` where `n` is equal to the position of the child you want (1 = first, 2 = second, etc).
+	for parent: `(index - 1) / d`
 
 #### 4. What is one question that confused you about this exercise, or one piece of advice you would share with students next semester?
 
