@@ -57,9 +57,11 @@ remove 8:
 
 #### 3. Exercise 10.4 from http://opendatastructures.org/ods-cpp/10_3_Discussion_Exercises.html
 
-	for the children: `d * index + n` where `n` is equal to the position of the child you want (1 = first, 2 = second, etc).
-	for parent: `(index - 1) / d`
+for the children: `d * index + n` where `n` is equal to the position of the child you want (1 = first, 2 = second, etc).
+for parent: `(index - 1) / d`
 
 #### 4. What is one question that confused you about this exercise, or one piece of advice you would share with students next semester?
 
-TODO
+I found this to be one of the easier labs we have done, so I wasn't very confused on anything.  One question I had is would you be able
+to represent a binary search tree with this array just as easily as you can implement a queue?  It seems to me likes easier to use actual
+nodes for a BST because of how naturally you can use recursion with them.
